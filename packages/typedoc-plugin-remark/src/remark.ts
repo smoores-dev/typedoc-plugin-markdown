@@ -10,9 +10,6 @@ export async function parseContents(
   const file = await read(filePath);
   const processor = remark().data('settings', remarkStringifyOptions);
   const plugins = [
-    ['remark-frontmatter', ['yaml']],
-    'remark-gfm',
-    'remark-mdx',
     './normalize-tables.mjs',
     ...userPlugins,
   ];
